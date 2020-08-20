@@ -1,0 +1,52 @@
+.SingleUser{
+    /* border: red solid 3px; */
+    border-radius: 7px;
+    padding: 10px;
+}
+
+/* input{
+    width: 60%;
+} */
+.Data{
+background-color: gray;
+border-radius: 10px;
+border: black solid 3px;
+
+}
+h5{
+    color: blue;
+    /* color: rgb(241, 200, 145); */
+}
+.todo{
+float: right;
+/* width: max-content; */
+height: 100px;
+display: grid;
+position: unset
+
+
+}
+.todouser{
+    float: right;
+    
+   
+}
+.postUser{
+    float: right;
+    position: unset;
+}
+/* .post{
+    float: right;
+    width: max-content;
+    height: 10px;
+} */
+
+.red {
+    border: 2px solid red;
+    /* box-shadow: 0 0.5rem 1.5rem rgb(255, 0, 0, 0.7); */
+  }
+  
+  .green {
+    border: 2px solid rgb(45, 212, 45);
+    box-shadow: 0 0.5rem 1.5rem rgb(0, 128, 0, 0.7);
+  }

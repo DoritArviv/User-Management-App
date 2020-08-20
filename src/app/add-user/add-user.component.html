@@ -1,0 +1,20 @@
+<div class="card mt-4 add">
+    <div class="card-body">
+
+        <p>Add New User</p>
+        <div>
+            <label>
+                Name: <input type="text" #name [(ngModel)]="useObj.name">
+            </label>
+        </div>
+        <div>
+            <label>
+                E-mail: <input type="text" #email [(ngModel)]="useObj.email">
+            </label>
+        </div>
+
+        <button class="btn btn-success btn-sm mt-2 mr-1" (click)='add()'>Add</button>
+        <button class="btn btn-secondary btn-sm mt-2" (click)='onCancel()'>Cancel</button>
+    </div>
+
+</div>

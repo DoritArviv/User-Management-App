@@ -1,0 +1,5 @@
+
+<div *ngFor="let user of usersData |searchPipe: searchText">
+    <app-user [currentUser]='user'></app-user>
+</div>
+

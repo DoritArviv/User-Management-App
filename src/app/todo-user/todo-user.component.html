@@ -1,0 +1,27 @@
+<div class="container-fluid">
+     <button class="btn btn-sm btn-info" (click)='Addtodo()' *ngIf='!addTodo'>Add To Do</button>
+     <br>
+     <div  *ngIf='(!addTodo && this.todoUser.length >=1)' class="showTodos">
+      <p>TO-DO USER : {{useridTodo}}</p>
+      <hr>
+           <div class="card todosUser" *ngFor="let todo of todoUser">
+             <p> Title: {{todo.title  |slice : 0 : 15}}...</p> 
+             <p> Completed: {{todo.completed}} </p>
+                <input type="button" *ngIf='todo.completed === false'
+                 class="add btn btn-sm  btn-secondary" value="Mark as done" (click)='markCompleted(todo.id)'>
+           </div>
+     </div>
+     
+     <div *ngIf='(!addTodo &&  this.todoUser.length < 1 )'>
+          <p>Press Add To Create New To-Do </p>
+      </div>
+
+     <div *ngIf='addTodo' class="card">
+          <div class="card-body">
+               <p>Add To-Do</p>
+                  <p>title: <input type="text" #title placeholder="Enter To-Do"></p>
+                   <button  class="btn btn-sm btn-info mr-2" (click)='AddUserTodo(useridTodo,title.value)'>Add</button>
+                   <button  class="btn btn-sm btn-info" (click)='addTodo=false'>Cancel</button>
+          </div>
+     </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="SingleUser col-sm-4 col-md-5" [ngClass]="this.uncompletedTasks ? 'red' : 'green'"
+      [style.background-color]="isRed ?'rgb(241, 200, 145)':'white'">
+      <h5><a (click)="isRed=!isRed"> ID : {{currentUser.id}}</a></h5>
+      <div class="form-group">
+        <label for="name">
+          Name: <input type="text" #name [(ngModel)]="currentUser.name">
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="email">
+          E-mail: <input type="text" #email [(ngModel)]="currentUser.email">
+        </label>
+      </div>
+
+      <a class="btn btn-secondary btn-sm mb-2" (mouseover)="showAddress = true" (click)="this.showAddress = false">OTHER
+        DATA</a>
+      <div class="form-group" *ngIf="this.showAddress">
+        <label for="street">
+          Street: <input type="text" #street [(ngModel)]="currentUser.address.street">
+        </label>
+      </div>
+      <div class="form-group" *ngIf="this.showAddress">
+        <label for="city">
+          City:<input type="text" #city [(ngModel)]="this.currentUser.address.city">
+        </label>
+      </div>
+      <div class="form-group" *ngIf="this.showAddress">
+        <label for="zipcode">
+          Zipcode: <input type="text" #zipcode [(ngModel)]="this.currentUser.address.zipcode">
+        </label>
+      </div>
+     
+
+      <button class="btn btn-danger btn-sm ml-3 float-right" (click)='onDelete(currentUser._id, currentUser.id);'> DELETE</button>
+      <button class="btn btn-warning btn-sm ml-3 float-right" (click)='update(currentUser._id)'>UPDATE</button>
+ 
+    </div>
+
+    <div class="todo col-sm-8 col-md-7">
+      <button class="btn btn-danger col-1 btn-sm mb-2 float-right" *ngIf='isRed' (click)='isRed=!isRed'>X</button>
+      <div class="row todouser mb-2 ">
+        <app-todo-user [useridTodo]='currentUser.id' *ngIf='isRed'></app-todo-user>
+      </div>
+      <div class="row postUser">
+        <app-post-user [userId]='currentUser.id' *ngIf='isRed'></app-post-user>
+      </div>
+    </div>
+
+  </div>
+</div>
